@@ -5,7 +5,7 @@ export const options = {
   // A number specifying the number of VUs to run concurrently.
   vus: 10,
   // A string specifying the total duration of the test run.
-  duration: '10s',
+  duration: '30s',
   summaryTrendStats: ['avg', 'min', 'med', 'max', 'p(90)', 'p(95)', 'p(99)']
 };
 
