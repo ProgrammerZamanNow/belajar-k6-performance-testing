@@ -4,6 +4,10 @@ import execution from "k6/execution";
 import {Counter} from "k6/metrics";
 
 export const options = {
+    thresholds: {
+        user_registration_counter_success: ['count>190'],
+        user_registration_counter_error: ['count<10']
+    },
     scenarios: {
         userRegistration: {
             exec: "userRegistration",
