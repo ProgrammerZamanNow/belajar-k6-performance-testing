@@ -2,6 +2,7 @@ import {loginUser, registerUser} from "./helper/user.js";
 import {createContact} from "./helper/contact.js";
 import execution from "k6/execution";
 import {Counter} from "k6/metrics";
+import { uuidv4 } from 'https://jslib.k6.io/k6-utils/1.4.0/index.js';
 
 export const options = {
     thresholds: {
@@ -29,7 +30,7 @@ const registerCounterSuccess = new Counter("user_registration_counter_success");
 const registerCounterError = new Counter("user_registration_counter_error");
 
 export function userRegistration() {
-    const uniqueId = new Date().getTime();
+    const uniqueId = uuidv4();
     const registerRequest = {
         username: `user-${uniqueId}`,
         password: 'rahasia',
