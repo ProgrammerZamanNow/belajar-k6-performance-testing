@@ -12,8 +12,9 @@ export const options = {
 };
 
 export function setup() {
+    const totalContact = Number(__ENV.TOTAL_CONTACT) || 10;
     const data = [];
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < totalContact; i++) {
         data.push({
             "first_name": "Kontak",
             "last_name": `Ke-${i}`,
